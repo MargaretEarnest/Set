@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - APanel",
+            "request": "launch",
+            "mainClass": "com.set.APanel",
+            "projectName": "set"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ShapeLibrary",
+            "request": "launch",
+            "mainClass": "com.set.ShapeLibrary",
+            "projectName": "set"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Play",
+            "request": "launch",
+            "mainClass": "com.set.Play",
+            "projectName": "set"
+        }
+    ]
+}
