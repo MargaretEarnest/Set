@@ -1,7 +1,6 @@
 package com.set;
 
 import java.util.*;
-import javax.swing.JButton;
 
 class Deck {
     public ArrayList<Card> cardDeck = new ArrayList<Card>(81);
@@ -54,7 +53,6 @@ class Deck {
         for(int i=0; i<this.tableDeck.size(); i++) {
             result += i + ": " + this.tableDeck.get(i).toString();
         }
-        // result += "\nThe table has " + this.tableDeck.size() + " cards";
         return result;
     }
 
@@ -67,9 +65,6 @@ class Deck {
         boolean isStyle = ((this.tableDeck.get(card1).getStyle() == this.tableDeck.get(card2).getStyle() && this.tableDeck.get(card2).getStyle() == this.tableDeck.get(card3).getStyle()) || (this.tableDeck.get(card1).getStyle() != this.tableDeck.get(card2).getStyle() && this.tableDeck.get(card2).getStyle() != this.tableDeck.get(card3).getStyle() && this.tableDeck.get(card1).getStyle() != this.tableDeck.get(card3).getStyle()));
         boolean isColor = ((this.tableDeck.get(card1).getColor() == this.tableDeck.get(card2).getColor() && this.tableDeck.get(card2).getColor() == this.tableDeck.get(card3).getColor()) || (this.tableDeck.get(card1).getColor() != this.tableDeck.get(card2).getColor() && this.tableDeck.get(card2).getColor() != this.tableDeck.get(card3).getColor() && this.tableDeck.get(card1).getColor() != this.tableDeck.get(card3).getColor()));
         boolean isShape = ((this.tableDeck.get(card1).getShape() == this.tableDeck.get(card2).getShape() && this.tableDeck.get(card2).getShape() == this.tableDeck.get(card3).getShape()) || (this.tableDeck.get(card1).getShape() != this.tableDeck.get(card2).getShape() && this.tableDeck.get(card2).getShape() != this.tableDeck.get(card3).getShape() && this.tableDeck.get(card1).getShape() != this.tableDeck.get(card3).getShape()));
-        if(isNumber && isStyle && isColor && isShape && (card1 != card2)) {
-            System.out.println(this.tableDeck.get(card1).toString() + this.tableDeck.get(card2).toString() + this.tableDeck.get(card3).toString());
-        }
         return isNumber && isStyle && isColor && isShape && (card1 != card2);
     }
 
@@ -110,11 +105,6 @@ class Deck {
         Collections.reverse(indexes);
         for(int index : indexes) { 		      
             this.tableDeck.remove(index); 		
-            // for(JButton button : ShapeLibrary.buttons) {
-            //     if(button.getActionCommand() == Integer.toString(index)) {
-            //         this.board.remove(button);
-            //     }
-            // }
         }
     }
 

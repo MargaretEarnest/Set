@@ -14,8 +14,6 @@ public class Play {
         deck.populateTable();
 
         while(deck.cardDeck.size() >= 3) {
-            // System.out.println(deck.toStringTable());
-            // System.out.print("Which three cards are a set? (enter '-1' to add three if you're stuck) ");
             int size = Card.selected.size();
             while(size < 3) {
                 if(Card.selected.contains(-1)) {
@@ -23,7 +21,6 @@ public class Play {
                         deck.addThree();
                         System.out.println("Three cards added!");
                         deck.populateTable();
-                        // System.out.println("Cards in deck: " + deck.cardDeck.size() + "\n");
                         Card.selected.clear();
                         try {
                             Thread.sleep(10);
@@ -39,12 +36,10 @@ public class Play {
                     }
                 }
                 size = Card.selected.size();
-                // System.out.println(size);
                 try {
                     Thread.sleep(10);
                 } catch(InterruptedException u) {}
             }
-            // System.out.println("Out!");
             int one = Card.selected.get(0);
             int two = Card.selected.get(1);
             int three = Card.selected.get(2);
@@ -53,7 +48,6 @@ public class Play {
                     deck.addThree();
                     System.out.println("Three cards added!");
                     deck.populateTable();
-                    // System.out.println("Cards in deck: " + deck.cardDeck.size() + "\n");
                     Card.selected.clear();
                     continue;
                 } else {
