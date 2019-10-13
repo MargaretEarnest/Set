@@ -1,12 +1,8 @@
 package com.set;
 
-import java.util.Scanner;
-
-
 public class Play {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         Deck deck = new Deck();
         deck.shuffle();
         deck.createTable();
@@ -16,6 +12,7 @@ public class Play {
         while(deck.cardDeck.size() >= 3) {
             int size = Card.selected.size();
             while(size < 3) {
+                System.out.println(Card.selected);
                 if(Card.selected.contains(-1)) {
                     if(deck.tableDeck.size() <= 12) {
                         deck.addThree();
@@ -71,6 +68,5 @@ public class Play {
             Card.selected.clear();
         }
         System.out.println("Out of cards!\nYou win!");
-        scanner.close();
     }
 }

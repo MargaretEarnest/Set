@@ -144,7 +144,11 @@ public class ShapeLibrary extends JFrame {
         btn.setBorder(null);
         btn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                Card.selected.add(tablePosition);
+                if(!Card.selected.contains(tablePosition)) {
+                    Card.selected.add(tablePosition);
+                } else {
+                    Card.selected.remove(Card.selected.indexOf(tablePosition));
+                }
             }
         });
         layeredPane.add(btn, 1);
