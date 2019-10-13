@@ -84,7 +84,7 @@ class Deck {
         int perRow = this.tableDeck.size()/3;
         int i=0;
         for(Card card : this.tableDeck) {
-            card.displayCard(padding+(cardWidth/2)+((column-1)*(padding+(cardWidth))), 100+((row-1)*(100+this.cardHeight)), i, this.board);
+            card.displayCard(padding+(cardWidth/2)+((column-1)*(padding+(cardWidth))), 100+((row-1)*(100+this.cardHeight)), i, this.board, Card.selected.contains(i));
             column++;
             if(column > perRow) {
                 column = 1;

@@ -1,19 +1,31 @@
 package com.set;
 
+import java.util.ArrayList;
+
 public class Play {
 
-    public static void main(String[] args) {
+    static ArrayList<Integer> selectedOld;
+    static ArrayList<Integer> localSelected;//make sure every check on selected array is checking same array in any given loop
+
+    public static void main(String[] args) throws InterruptedException {
         Deck deck = new Deck();
         deck.shuffle();
         deck.createTable();
 
         deck.populateTable();
 
+        selectedOld = new ArrayList<Integer>();
+        localSelected = new ArrayList<Integer>();
+
         while(deck.cardDeck.size() >= 3) {
             int size = Card.selected.size();
             while(size < 3) {
-                System.out.println(Card.selected);
-                if(Card.selected.contains(-1)) {
+                localSelected = Card.selected;
+                if(!selectedOld.equals(localSelected)) {
+                    deck.populateTable();
+                }
+                selectedOld = new ArrayList<Integer>(localSelected);
+                if(localSelected.contains(-1)) {
                     if(deck.tableDeck.size() <= 12) {
                         deck.addThree();
                         System.out.println("Three cards added!");
@@ -32,7 +44,7 @@ public class Play {
                         continue;
                     }
                 }
-                size = Card.selected.size();
+                size = localSelected.size();
                 try {
                     Thread.sleep(10);
                 } catch(InterruptedException u) {}

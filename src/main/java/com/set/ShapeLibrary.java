@@ -130,9 +130,14 @@ public class ShapeLibrary extends JFrame {
         makeButtonsAndFinish(); 
     }
 
-    public void drawCard(int x, int y, final int tablePosition) {
-        g2d.setColor(Color.BLACK);
-        g2d.setStroke(new BasicStroke(3.0f));
+    public void drawCard(int x, int y, final int tablePosition, boolean highlight) {
+        if(highlight) {
+            g2d.setColor(Color.YELLOW);
+            g2d.setStroke(new BasicStroke(8.0f));
+        } else {
+            g2d.setColor(Color.BLACK);
+            g2d.setStroke(new BasicStroke(3.0f));
+        }
         this.g2d.draw(new RoundRectangle2D.Float(x - cardWidth/2, y-cardHeight/2, cardWidth, cardHeight, 20,20));
         
         JButton btn = new JButton();
@@ -152,6 +157,17 @@ public class ShapeLibrary extends JFrame {
             }
         });
         layeredPane.add(btn, 1);
+    }
+
+    public void drawHighlight(int x, int y, boolean highlight) {
+        if(highlight) {
+            System.out.println("Highlighting");
+            g2d.setColor(Color.YELLOW);
+            this.g2d.draw(new RoundRectangle2D.Float(x - cardWidth/2, y-cardHeight/2, cardWidth, cardHeight, 20,20));
+        } else {
+            g2d.setColor(Color.BLACK);
+            this.g2d.draw(new RoundRectangle2D.Float(x - cardWidth/2, y-cardHeight/2, cardWidth, cardHeight, 20,20));
+        }
     }
 
     public void paintOval(int x, int y, int style, int color) {

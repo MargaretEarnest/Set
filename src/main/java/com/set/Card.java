@@ -34,8 +34,8 @@ class Card {
         return this.shape;
     }
 
-    public void displayCard(int x, int y, int tablePosition, ShapeLibrary board) {
-        board.drawCard(x, y, tablePosition);
+    public void displayCard(int x, int y, int tablePosition, ShapeLibrary board, boolean highlight) {
+        board.drawCard(x, y, tablePosition, highlight);
         //if 1, x
         //if 2, x - (width*2) then x + width*2
         //if 3, x - (width*3) then x then x + width*3
