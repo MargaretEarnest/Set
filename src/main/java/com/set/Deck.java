@@ -67,10 +67,10 @@ class Deck {
         boolean isStyle = ((this.tableDeck.get(card1).getStyle() == this.tableDeck.get(card2).getStyle() && this.tableDeck.get(card2).getStyle() == this.tableDeck.get(card3).getStyle()) || (this.tableDeck.get(card1).getStyle() != this.tableDeck.get(card2).getStyle() && this.tableDeck.get(card2).getStyle() != this.tableDeck.get(card3).getStyle() && this.tableDeck.get(card1).getStyle() != this.tableDeck.get(card3).getStyle()));
         boolean isColor = ((this.tableDeck.get(card1).getColor() == this.tableDeck.get(card2).getColor() && this.tableDeck.get(card2).getColor() == this.tableDeck.get(card3).getColor()) || (this.tableDeck.get(card1).getColor() != this.tableDeck.get(card2).getColor() && this.tableDeck.get(card2).getColor() != this.tableDeck.get(card3).getColor() && this.tableDeck.get(card1).getColor() != this.tableDeck.get(card3).getColor()));
         boolean isShape = ((this.tableDeck.get(card1).getShape() == this.tableDeck.get(card2).getShape() && this.tableDeck.get(card2).getShape() == this.tableDeck.get(card3).getShape()) || (this.tableDeck.get(card1).getShape() != this.tableDeck.get(card2).getShape() && this.tableDeck.get(card2).getShape() != this.tableDeck.get(card3).getShape() && this.tableDeck.get(card1).getShape() != this.tableDeck.get(card3).getShape()));
-        if(isNumber && isStyle && isColor && isShape) {
+        if(isNumber && isStyle && isColor && isShape && (card1 != card2)) {
             System.out.println(this.tableDeck.get(card1).toString() + this.tableDeck.get(card2).toString() + this.tableDeck.get(card3).toString());
         }
-        return isNumber && isStyle && isColor && isShape;
+        return isNumber && isStyle && isColor && isShape && (card1 != card2);
     }
 
     public void createTable() {
