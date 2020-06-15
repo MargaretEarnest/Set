@@ -40,25 +40,25 @@ class Card {
         //if 2, x - (width*2) then x + width*2
         //if 3, x - (width*3) then x then x + width*3
         int modifier = 0;
-        if(this.number == 3) {
-            modifier = this.shapeWidth*3;
+        if (this.number == 3) {
+            modifier = this.shapeWidth * 3;
         }
-        for(int i=0; i<this.number; i++) {
-            if(this.number != 2) {
-                if(this.shape == 1) {
-                    board.paintOval(x+(i-1)*modifier, y, this.style, this.color);
+        for (int i = 0; i < this.number; i++) {
+            if (this.number != 2) {
+                if (this.shape == 1) {
+                    board.paintOval(x + (i - 1) * modifier, y, this.style, this.color);
                 } else if (this.shape == 2) {
-                    board.paintDiamond(x+(i-1)*modifier, y, this.style, this.color);
+                    board.paintDiamond(x + (i - 1) * modifier, y, this.style, this.color);
                 } else {
-                    board.paintSquiggle(x+(i-1)*modifier, y, this.style, this.color);
+                    board.paintSquiggle(x + (i - 1) * modifier, y, this.style, this.color);
                 }
             } else {
-                if(this.shape == 1) {
-                    board.paintOval(x+i*this.shapeWidth*4-this.shapeWidth*2, y, this.style, this.color);
+                if (this.shape == 1) {
+                    board.paintOval(x + i * this.shapeWidth * 4 - this.shapeWidth * 2, y, this.style, this.color);
                 } else if (this.shape == 2) {
-                    board.paintDiamond(x+i*this.shapeWidth*4-this.shapeWidth*2, y, this.style, this.color);
+                    board.paintDiamond(x + i * this.shapeWidth * 4 - this.shapeWidth * 2, y, this.style, this.color);
                 } else {
-                    board.paintSquiggle(x+i*this.shapeWidth*4-this.shapeWidth*2, y, this.style, this.color);
+                    board.paintSquiggle(x + i * this.shapeWidth * 4 - this.shapeWidth * 2, y, this.style, this.color);
                 }
             }
         }
